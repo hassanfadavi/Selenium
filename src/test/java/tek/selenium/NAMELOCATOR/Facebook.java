@@ -1,4 +1,4 @@
-package tek.selenium;
+package tek.selenium.NAMELOCATOR;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,8 +13,10 @@ public class Facebook {
 
         String pagetitle=chdriver.getTitle();
         System.out.println(pagetitle);
+        chdriver.manage().window().maximize();
 
        Thread.sleep(5000);
+
 
         //email
         By emailInput= By.name("email");
@@ -27,7 +29,8 @@ public class Facebook {
         WebElement passelement=chdriver.findElement(passInput);
         passelement.sendKeys("123456");
 
-
+        Thread.sleep(5000);
+         chdriver.quit();
 
 
     }
