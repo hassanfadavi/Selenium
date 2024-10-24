@@ -26,10 +26,10 @@ public class XpathLocator {
         Thread.sleep(1000);
         //print
 //
-//        By  print= By.xpath("/html/body/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/h1");
-//        WebElement printElement= chdriver.findElement(print);
-//        String txt=printElement.getText();
-//        System.out.println(txt);
+        By  print= By.xpath("/html/body/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/h1");
+        WebElement printElement= chdriver.findElement(print);
+        String txt=printElement.getText();
+        System.out.println(txt);
 
         Thread.sleep(1000);
 
