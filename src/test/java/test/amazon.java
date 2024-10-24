@@ -10,7 +10,7 @@ public class amazon {
         ChromeDriver chdriver=new ChromeDriver();
         chdriver.get("https://retail.tekschool-students.com/");
         chdriver.manage().window().maximize();
-
+//
         String titlePage=chdriver.getTitle();
         System.out.print(titlePage);
         Thread.sleep(5000);
