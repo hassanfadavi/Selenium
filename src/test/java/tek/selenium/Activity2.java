@@ -37,7 +37,7 @@ public class Activity2 {
         Thread.sleep(2000);
 
 
-        By appleLocator=By.tagName("h4") ;      //<a>Link</a>.
+        By appleLocator=By.tagName("h4") ;
         List< WebElement> allLinkElements=chdriver.findElements(appleLocator);
 
         int count = 0;
@@ -62,6 +62,6 @@ public class Activity2 {
 
 
 
-        //        chdriver.quit();
+
     }
 }
