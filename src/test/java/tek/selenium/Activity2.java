@@ -45,7 +45,6 @@ public class Activity2 {
             String text=element.getText();
             System.out.println(text);
             count++;
-
         }
         System.out.println("number of Apple: "+count);
 
