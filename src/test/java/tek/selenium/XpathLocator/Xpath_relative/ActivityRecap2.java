@@ -1,4 +1,4 @@
-package tek.selenium;
+package tek.selenium.XpathLocator.Xpath_relative;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -37,7 +37,7 @@ public class ActivityRecap2 {
 
 
         //SELECT keyboard
-        By  keyboardLocator = By.xpath("//div[1][@class='products__layout']/img");
+        By  keyboardLocator = By.xpath("//div[@class='products']/div[1]/p[@class='products__name']");
         WebElement keyboardElement= chdriver.findElement(keyboardLocator);
         keyboardElement.click();
         Thread.sleep(1000);

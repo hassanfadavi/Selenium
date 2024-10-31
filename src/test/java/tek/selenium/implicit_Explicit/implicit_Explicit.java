@@ -1,20 +1,15 @@
-package tek.selenium.CSS;
+package tek.selenium.implicit_Explicit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Activity8 {
-    public static void main(String[] args) throws InterruptedException {
+import java.time.Duration;
 
-
-           /*
-    In Retail App https://retail.tekschool-students.com/
-    then go to Sign in and sign in with Invalid credentials
-    Then print the error message
-    Only use CSS Selector
-     */
-
+public class implicit_Explicit {
+    public static void main(String[] args) {
 
         //open Chrome
         ChromeDriver chdriver=new ChromeDriver();
@@ -22,40 +17,57 @@ public class Activity8 {
         chdriver.manage().window().maximize();
         String pageTitle=chdriver.getTitle();
         System.out.println(pageTitle);
-        Thread.sleep(2000);
+
+        //implicit
+        chdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        //explicit
+        WebDriverWait wait=new WebDriverWait(chdriver , Duration.ofSeconds(20));
+
+
 
         //SIGN IN
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a#signinLink")));
+
         By signInLocator = By.cssSelector("a#signinLink");   //id
         WebElement signInElement= chdriver.findElement(signInLocator);
         signInElement.click();
 
-
         //input Email
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='email']")));
+
         By emailInput = By.cssSelector("input[name='email']");     //Attribute
         WebElement emailInputElement= chdriver.findElement(emailInput);
         emailInputElement.sendKeys("s.hasanfadavi@gmail.com");
-        Thread.sleep(1000);
+
 
         //input pass
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='password']")));
+
         By passInput = By.cssSelector("input[name='password']");   //Attribute
         WebElement passElement= chdriver.findElement( passInput);
         passElement.sendKeys("12333");
-        Thread.sleep(1000);
+
 
         //login
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#loginBtn")));
+
         By loginInput = By.cssSelector("button#loginBtn");     //id
         WebElement loginElement= chdriver.findElement( loginInput);
         loginElement.click();
-        Thread.sleep(1000);
+
 
 //        //print error
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.error")));
+
         By error = By.cssSelector("div.error");         //class
         WebElement errorElement= chdriver.findElement( error);
         String text=errorElement.getText();
         System.out.println(text);
-        Thread.sleep(1000);
+
 
         chdriver.quit();
+
+
 
 
 

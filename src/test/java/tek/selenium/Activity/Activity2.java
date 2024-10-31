@@ -1,14 +1,10 @@
-package tek.selenium;
+package tek.selenium.Activity;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Activity2 {
     public static void main(String[] args) throws InterruptedException {
@@ -37,18 +33,34 @@ public class Activity2 {
         Thread.sleep(2000);
 
 
-        By appleLocator=By.tagName("h4") ;
-        List< WebElement> allLinkElements=chdriver.findElements(appleLocator);
+        By productCardLocator = By.className("ant-card-hoverable");
+        List<WebElement> productCards = chdriver.findElements(productCardLocator);
 
-        int count = 0;
-        for(WebElement element:allLinkElements){
-            String text=element.getText();
-            System.out.println(text);
-            count++;
-        }
-        System.out.println("number of Apple: "+count);
+        int cardSize = productCards.size();
+        System.out.println("Card Count " + cardSize);
 
         chdriver.quit();
+
+
+
+
+        //or
+
+        //number of Apple products
+//        By appleLocator=By.tagName("h4") ;
+//        List< WebElement> allLinkElements=chdriver.findElements(appleLocator);
+//
+//
+//        int count = 0;
+//        for(WebElement element:allLinkElements){
+//            String text=element.getText();
+//            System.out.println(text);
+//            count++;
+//        }
+//        Thread.sleep(2000);
+//        System.out.println("number of Apple: "+count);
+//
+//        chdriver.quit();
 
 
 

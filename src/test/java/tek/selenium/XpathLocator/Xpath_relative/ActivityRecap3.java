@@ -1,11 +1,24 @@
-package tek.selenium;
+package tek.selenium.XpathLocator.Xpath_relative;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ActivityRecap4 {
+import java.util.List;
+
+public class ActivityRecap3 {
     public static void main(String[] args) throws InterruptedException {
+
+          /*
+    In Retail app using your credentials login
+    make sure you are logged in
+    Only use relative XPATH
+    WebElement -> isDisplayed();
+     */
+
+
+
+
         //open Chrome
         ChromeDriver chdriver=new ChromeDriver();
         chdriver.get("https://retail.tekschool-students.com/");
@@ -42,46 +55,28 @@ public class ActivityRecap4 {
         Thread.sleep(1000);
 
 
+        //checked log in
 
+        boolean isLogoutDisplayed = chdriver.findElement(
+                        By.xpath("//button[text() = 'Log out']"))
+                .isDisplayed();
 
-        //input keyboard
-        By inputLocator = By.xpath("//input[@type='text']");
-        WebElement inputElement= chdriver.findElement(inputLocator);
-        inputElement.sendKeys("keyboard");
-        Thread.sleep(1000);
-
-        //enter search
-        By searchInput = By.xpath("//button[@class='search__btn']");
-        WebElement searchElement= chdriver.findElement( searchInput);
-        searchElement.click();
-        Thread.sleep(1000);
-
-
-        //SELECT keyboard
-        By  keyboardLocator = By.xpath("//div[@class='products']/div[1]/p[@class='products__name']");
-        WebElement keyboardElement= chdriver.findElement(keyboardLocator);
-        keyboardElement.click();
-        Thread.sleep(1000);
-
-
-        //add to cart
-        By  cartLocator = By.xpath("//button[@class='product__btn']");
-        WebElement cartElement= chdriver.findElement(cartLocator);
-        cartElement.click();
-        Thread.sleep(1000);
-
-
-        //cartQuantity
-
-        By  cart = By.xpath("//span[@id='cartQuantity']");
-        WebElement carElement= chdriver.findElement( cart);
-        String cartN=carElement.getText();
-        System.out.println(cartN);
-
-        if (cartN.equals("1")) {
-            System.out.println("CART COUNT:1");
-        } else {
-            System.out.println("EMPTY");
+        if (isLogoutDisplayed) {
+            System.out.println("Test Passed");
+        }else {
+            System.out.println("Test Failed");
         }
+
+        chdriver.quit();
+
+
+
+
+
+
+
+
+
+
     }
 }

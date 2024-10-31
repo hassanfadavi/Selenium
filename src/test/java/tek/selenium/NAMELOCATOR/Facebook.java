@@ -18,7 +18,7 @@ public class Facebook {
        Thread.sleep(5000);
 
 
-        //email
+        //input email
         By emailInput= By.name("email");
         WebElement emailElement=chdriver.findElement(emailInput);
         emailElement.sendKeys("s.hassanfadavi@gmail.com");

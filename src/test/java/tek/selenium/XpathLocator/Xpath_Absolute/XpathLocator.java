@@ -1,4 +1,4 @@
-package tek.selenium.XpathLocator;
+package tek.selenium.XpathLocator.Xpath_Absolute;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,6 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class XpathLocator {
     public static void main(String[] args) throws InterruptedException {
+
+ /*
+    On new Retail app https://dev.retail.tekschool-students.com/
+    On home page search Apple and click on Search
+    On product display section should be 3 card related to app
+    print the count.
+     */
+
+        ChromeDriver driver=new ChromeDriver();
+
 
 
          //open web browser

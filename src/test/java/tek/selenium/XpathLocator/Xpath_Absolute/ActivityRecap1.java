@@ -1,4 +1,4 @@
-package tek.selenium;
+package tek.selenium.XpathLocator.Xpath_Absolute;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,6 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ActivityRecap1 {
     public static void main(String[] args) throws InterruptedException {
+
+        /*
+    In Retail App https://retail.tekschool-students.com/
+    Search for TV and Click on First product displayed
+    Then print the product title on the next page.
+
+     */
+
+
 
         //open Chrome
         ChromeDriver chdriver=new ChromeDriver();

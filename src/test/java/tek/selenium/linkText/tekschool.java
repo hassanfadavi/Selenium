@@ -1,4 +1,4 @@
-package test;
+package tek.selenium.linkText;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,33 +17,39 @@ public class tekschool {
 
 
         //sign in
-       By signLocator= By.id("signinLink");
+       By signLocator= By.linkText("Sign in");
        WebElement signElement=chdriver.findElement(signLocator);
        signElement.click();
 
-       //create account
-        By emailLocator= By.name("email");
-       WebElement  emailElement=chdriver.findElement(emailLocator);
+        Thread.sleep(2000);
+
+       //enter email
+        By emailInput= By.name("email");
+       WebElement  emailElement=chdriver.findElement(emailInput);
        emailElement.sendKeys("S.hasanfadavi@gmail.com");
 
+        Thread.sleep(2000);
 
-
-        //create pass
-        By passwordLocator= By.name("password");
-        WebElement  passwordElement=chdriver.findElement(passwordLocator);
+        //enter pass  
+        By passwordInput= By.name("password");
+        WebElement  passwordElement=chdriver.findElement(passwordInput);
         passwordElement.sendKeys("1234567");
+
+        Thread.sleep(2000);
 
         //hit the login button
         By loginLocator= By.id("loginBtn");
         WebElement loginElement=chdriver.findElement(loginLocator);
         loginElement.click();
 
+        Thread.sleep(2000);
 
         //print error
         By errorLocator= By.className("error");
         WebElement errorElement=chdriver.findElement(errorLocator);
         String txt=errorElement.getText();
         System.out.println(txt);
+
 
 //        chdriver.quit();
 
