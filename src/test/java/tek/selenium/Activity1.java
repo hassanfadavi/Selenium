@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Activity1 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         /*On New Retail App https://dev.retail.tekschool-students.com/Sign in with  following user and
         make sure You logged in and use name displayunder user
         profile drop down{name: "Quinn Turner",email:
@@ -21,7 +21,7 @@ public class Activity1 {
         chdriver.manage().window().maximize();
         String pageTitle=chdriver.getTitle();
         System.out.println(pageTitle);
-        Thread.sleep(2000);
+
 
         //implicit
         chdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -32,7 +32,7 @@ public class Activity1 {
         //SIGN IN
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Sign in']")));
 
-        By  signInLocator = By.xpath("//a[text()='Sign in']");  //id
+        By  signInLocator = By.xpath("//a[text()='Sign in']");
         WebElement signInElement= chdriver.findElement(signInLocator);
         signInElement.click();
 
@@ -57,7 +57,7 @@ public class Activity1 {
         //SIGN IN
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
 
-        By  sign  = By.cssSelector("button[type='submit']");  //id
+        By  sign  = By.cssSelector("button[type='submit']");
         WebElement signElement= chdriver.findElement(sign );
         signElement.click();
 
@@ -65,7 +65,7 @@ public class Activity1 {
         //profile
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class ='ant-space-item']/button")));
 
-        By  profile = By.xpath("//div[@class = 'ant-space-item']/button");  //id
+        By  profile = By.xpath("//div[@class = 'ant-space-item']/button");
         WebElement profileElement= chdriver.findElement(profile);
         profileElement.click();
 
