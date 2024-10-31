@@ -83,11 +83,10 @@ public class Activity1 {
         if(text.equals("Quinn Turner")){System.out.println("Passed");
         }else System.out.println("not passed");
 
-
-
+chdriver.quit();
 
 
 
     }
-    
+
 }
