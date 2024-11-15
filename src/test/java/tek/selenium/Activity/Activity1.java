@@ -1,7 +1,11 @@
 package tek.selenium.Activity;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.Scanner;
 
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
@@ -41,29 +45,29 @@ public class Activity1 {
 
 
 
-//
-//
-//        WebDriver driver;
-//        var input = new Scanner(System.in);
-//        System.out.println("choose your browser: ");
-//        String browser = input.next();
-//
-//        if (browser.equalsIgnoreCase("chrome")) {
-//            driver = new ChromeDriver();
-//        } else if (browser.equalsIgnoreCase("edge")){
-//            driver = new EdgeDriver();
-//        }else if(browser.equalsIgnoreCase("firefox")){
-//            driver = new FirefoxDriver();
-//        } else {
-//            throw new RuntimeException("wrong browser");
-//        }
-//
-//
-//        driver.get("https://dev.retail.tekschool-students.com/");
-//        String pageTitle=driver.getTitle();
-//        System.out.println(pageTitle);
-//        Thread.sleep(2000);
-//        driver.quit();
+
+
+        WebDriver driver;
+        var input = new Scanner(System.in);
+        System.out.println("choose your browser: ");
+        String browser = input.next();
+
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("edge")){
+            driver = new EdgeDriver();
+        }else if(browser.equalsIgnoreCase("firefox")){
+            driver = new FirefoxDriver();
+        } else {
+            throw new RuntimeException("wrong browser");
+        }
+
+
+        driver.get("https://dev.retail.tekschool-students.com/");
+        String pageTitles=driver.getTitle();
+        System.out.println(pageTitles);
+        Thread.sleep(2000);
+        driver.quit();
 
 
 
