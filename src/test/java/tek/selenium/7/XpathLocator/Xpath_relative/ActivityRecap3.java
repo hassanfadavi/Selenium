@@ -72,6 +72,46 @@ public class ActivityRecap3 {
 
 
 
+//                //open chrome
+// ChromeDriver chDriver=new ChromeDriver();
+//  chDriver.get("https://retail.tekschool-students.com/");
+//  chDriver.manage().window().maximize();
+//  String title=chDriver.getTitle();
+//        System.out.println(title);
+//
+//        //imp
+//        chDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        //exp
+//        WebDriverWait wait=new WebDriverWait(chDriver,Duration.ofSeconds(10));
+//
+//        //sign in
+//        wait.until(ExpectedConditions.elementToBeClickable(
+//                By.xpath("//a[@id='signinLink']")))
+//                .click();
+//
+//        //input email
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.xpath("//input[@name='email']"))).
+//                sendKeys("s.hasanfadavi@gmail.com");
+//
+//        //input pass
+//        wait.until(ExpectedConditions.presenceOfElementLocated(
+//                By.xpath("//input[@name='password']")))
+//                .sendKeys("Se@123456");
+//        //click login
+//        wait.until(ExpectedConditions.elementToBeClickable(
+//                By.xpath("//button[text()='Login']")))
+//                .click();
+//
+//    boolean  isDisplayed=wait.until(ExpectedConditions.elementToBeClickable(
+//                By.xpath("//button[text()='Log out']")))
+//            .isDisplayed();
+//
+//    if(isDisplayed){
+//        System.out.println("loged in");
+//    }else System.out.println("not loged in");
+
+
 
 
 

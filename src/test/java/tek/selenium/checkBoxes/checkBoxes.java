@@ -31,23 +31,21 @@ public class checkBoxes {
         wait.until(ExpectedConditions.urlToBe(baseUrl));
 
 
+
+////
+
         Actions ac=new Actions(driver);
+         WebElement javacheckedBox=driver.findElement(By.id("javaInput"));
+        ac.click(javacheckedBox).perform();
 
 
-      List<WebElement> interestsList =driver.findElements(By.xpath("//fieldset[@id='secondQuestion']//input"));
-
-
-      for (  WebElement   list    :interestsList      ){
+//select all of them
+      List<WebElement> listOfcheckBoxes =driver.findElements(By.xpath("//div[@id='firstQuestion']//input"));
+      for (  WebElement   list    :listOfcheckBoxes     ){
 
                   ac.click(list).perform();
       }
 
-
-        System.out.println( interestsList.size());
-
-
-
-//
 
 
 

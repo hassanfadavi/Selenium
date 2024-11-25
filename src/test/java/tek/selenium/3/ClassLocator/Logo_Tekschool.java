@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Logo_Tekschool {
     public static void main(String[] args) throws InterruptedException{
 
+        //print logo Tekschool
 
         ChromeDriver chdriver=new ChromeDriver();
         chdriver.get("https://retail.tekschool-students.com/");

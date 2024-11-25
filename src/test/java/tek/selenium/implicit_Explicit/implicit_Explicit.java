@@ -24,46 +24,30 @@ public class implicit_Explicit {
         WebDriverWait wait=new WebDriverWait(chdriver , Duration.ofSeconds(20));
 
 
-
         //SIGN IN
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a#signinLink")));
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("a#signinLink")))
+                .click();
 
-        By signInLocator = By.cssSelector("a#signinLink");   //id
-        WebElement signInElement= chdriver.findElement(signInLocator);
-        signInElement.click();
 
         //input Email
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='email']")));
-
-        By emailInput = By.cssSelector("input[name='email']");     //Attribute
-        WebElement emailInputElement= chdriver.findElement(emailInput);
-        emailInputElement.sendKeys("s.hasanfadavi@gmail.com");
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("input[name='email']"))).sendKeys("s.hasanfadavi@gmail.com");
 
         //input pass
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='password']")));
-
-        By passInput = By.cssSelector("input[name='password']");   //Attribute
-        WebElement passElement= chdriver.findElement( passInput);
-        passElement.sendKeys("12333");
-
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("input[name='password']")))
+                .sendKeys("12333");
 
         //login
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#loginBtn")));
-
-        By loginInput = By.cssSelector("button#loginBtn");     //id
-        WebElement loginElement= chdriver.findElement( loginInput);
-        loginElement.click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("button#loginBtn")))
+                .click();
 
 //        //print error
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.error")));
-
-        By error = By.cssSelector("div.error");         //class
-        WebElement errorElement= chdriver.findElement( error);
-        String text=errorElement.getText();
-        System.out.println(text);
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                        (By.cssSelector("div.error")))
+                         .getText();
 
         chdriver.quit();
 

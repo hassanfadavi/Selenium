@@ -1,4 +1,4 @@
-package tek.selenium;
+package tek.selenium.RadioButton;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +11,20 @@ import java.time.Duration;
 import java.util.List;
 
 public class Activity3 {
+    /*
+     *
+     * Navigate to "https://retail.tekschool-students.com/selenium/radio"
+     * Locate and print the values of T-Shirt radio buttons
+     * Store the text into a list of string
+     * print each value into the console in a new line
+     * Click on the "Large" radio button.
+     *
+     * */
+
+    // "//div[@class='flex gap-3']/input[@type='radio']/following-sibling::label"
+    // "//div[@class='flex gap-3']/input[@name='tshirt']/following-sibling::label"
+    // "//input[@name='tshirt']/following-sibling::label"
+
 
     public static String Url="https://retail.tekschool-students.com/selenium/radio";
 
@@ -23,31 +37,23 @@ public class Activity3 {
         String title=driver.getTitle();
         System.out.println(title);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         WebDriverWait myWait=new WebDriverWait(driver,Duration.ofSeconds(10));
         myWait.until(ExpectedConditions.urlToBe(Url));
 
 
 
-
-
-        List<WebElement > TshirtList=driver.findElements(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[3]/p[1]"));
+        List<WebElement > TshirtList=driver.findElements(By.xpath("//input[@name='tshirt']/following-sibling::label"));
 
         for(   WebElement radios:TshirtList){
 
-            System.out.println(radios.getAttribute("lable"));
+            System.out.println(radios.getText());
         }
-
 
 
         WebElement largeRadioBut=driver.findElement(By.cssSelector("label[for='large']"));
         largeRadioBut.click();
-
-        if(largeRadioBut.isSelected()){
-            System.out.println("yes");
-
-        }else System.out.println("no");
 
     }
 }

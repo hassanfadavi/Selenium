@@ -35,72 +35,51 @@ public class Practice {
 
 
         //SIGN IN
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='signinLink']")));
-
-        By signInLocator = By.xpath("//a[@id='signinLink']");
-        WebElement signInElement= chdriver.findElement(signInLocator);
-        signInElement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[@id='signinLink']")))
+                        .click();
 
 
         //input Email
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='email']")));
-
-        By emailInput = By.xpath("//input[@name='email']");
-        WebElement emailInputElement= chdriver.findElement(emailInput);
-        emailInputElement.clear();
-        emailInputElement.sendKeys("s.hasanfadavi@gmail.com");
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@name='email']")))
+                .sendKeys("s.hasanfadavi@gmail.com");
 
 
         //input pass
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='password']")));
-
-        By passInput = By.xpath("//input[@name='password']");
-        WebElement passElement= chdriver.findElement( passInput);
-        passElement.clear();
-        passElement.sendKeys("Se@123456");
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//input[@name='password']")))
+                .sendKeys("Se@123456");
 
 
         //login
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text() = 'Login']")));
-
-        By loginInput = By.xpath("//button[text() = 'Login']");
-        WebElement loginElement= chdriver.findElement( loginInput);
-        loginElement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text() = 'Login']")))
+                .click();
 
 
         //Account
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='accountLink']")));
-
-        By accountLocator = By.xpath("//a[@id='accountLink']");
-        WebElement accountElement= chdriver.findElement(accountLocator);
-        accountElement.click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[@id='accountLink']")))
+                .click();
 
         //enter phone number
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='phoneNumber']")));
 
-        By phoneInput = By.cssSelector("input[name='phoneNumber']");   //Attribute
-        WebElement phoneElement= chdriver.findElement( phoneInput);
-        phoneElement.clear();
-        phoneElement.sendKeys("2404085559");
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("input[name='phoneNumber']"))).sendKeys("2404085559");
 
 
         //update
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#personalUpdateBtn")));
-
-        By update = By.cssSelector("button#personalUpdateBtn");   //Attribute
-        WebElement updateElement= chdriver.findElement( update);
-        updateElement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("button#personalUpdateBtn")))
+                .click();
 
 
         //text
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Personal Information Updated Successfully']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[text()='Personal Information Updated Successfully']")))
+                .getText();
 
-        By textLocator = By.xpath("//div[text()='Personal Information Updated Successfully']");
-        WebElement textElement= chdriver.findElement(textLocator);
-        String text=textElement.getText();
-        System.out.println(text);
 
 
 

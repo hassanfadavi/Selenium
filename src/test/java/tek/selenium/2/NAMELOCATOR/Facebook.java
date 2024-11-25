@@ -7,6 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Facebook {
     public static void main(String[] args) throws InterruptedException{
 
+    /*
+    Navigate to Facebook.com and enter username and password.
+    (please use dummy data)
+
+     */
 
         ChromeDriver chdriver=new ChromeDriver();
         chdriver.get("https://www.facebook.com/");

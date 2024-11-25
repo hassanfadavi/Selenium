@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class With2click {
     public static void main(String[] args) throws  InterruptedException{
 
-
+        //Trying to Click on Sign In Button In Retail app and click on create New Account
 
         ChromeDriver chdriver=new ChromeDriver();
         chdriver.get("https://retail.tekschool-students.com/");
